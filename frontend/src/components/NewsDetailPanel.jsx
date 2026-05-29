@@ -75,7 +75,7 @@ export default function NewsDetailPanel({ news, onClose, onBack }) {
     setLoading(true)
     try {
       const res = await axios.get(
-        `http://localhost:8000/analyze?event=${encodeURIComponent(news.event)}`
+        `${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/analyze?event=${encodeURIComponent(news.event)}`
       )
       setAnalysis(res.data)
     } catch(e) { console.error(e) }

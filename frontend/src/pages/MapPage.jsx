@@ -80,7 +80,7 @@ export default function MapPage() {
   const panelOpen = selectedCountry || selectedNews
 
   const loadEvents = () => {
-    axios.get('http://localhost:8000/events')
+    axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/events`)
       .then(res => {
         setEvents(res.data)
         setLoading(false)
