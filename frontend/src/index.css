@@ -6,7 +6,7 @@ body {
   background: #020817;
   color: #e2e8f0;
   font-family: 'Space Grotesk', system-ui, sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar { width: 3px; }
@@ -15,7 +15,6 @@ body {
 
 .mono { font-family: 'JetBrains Mono', monospace; }
 
-/* Scanline effect */
 .scanlines::after {
   content: '';
   position: fixed;
@@ -31,7 +30,6 @@ body {
   z-index: 9999;
 }
 
-/* Radar sweep */
 @keyframes radar-sweep {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
@@ -49,11 +47,6 @@ body {
   94% { opacity: 1; }
   96% { opacity: 0.9; }
   97% { opacity: 1; }
-}
-
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
 }
 
 @keyframes arc-flow {
@@ -74,3 +67,6 @@ body {
 .animate-flicker { animation: flicker 8s infinite; }
 .animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
 .animate-radar { animation: radar-sweep 4s linear infinite; }
+
+/* Map page — no scroll */
+.map-page { overflow: hidden; height: 100vh; }
